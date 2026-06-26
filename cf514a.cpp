@@ -1,8 +1,8 @@
 /***********************************************************************************************************************************************/
 #include <bits/stdc++.h>
 #include <unordered_set>
-#define int long long int
-#define double long double
+#define ll long long int
+#define dl long double
 #define endl '\n'
 #define um unordered_map
 #define us unordered_set
