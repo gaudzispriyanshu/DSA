@@ -1,4 +1,5 @@
 /***********************************************************************************************************************************************/
+#include <algorithm>
 #include <bits/stdc++.h>
 #include <unordered_map>
 #include <unordered_set>
@@ -19,39 +20,30 @@ const int mod = 1e9 + 7;
 // positions they becam eall equal thats 0 0 0 0 or -1 -1 -1 -1 based on
 // indexing but yeah that question was literally wow
 
-ll plusall(ll n) { return n % 2 == 0 ? (n / 2) * (n - 1) : n * ((n - 1) / 2); }
 void solve() {
-  ll n, m;
-  vector<int> boy, girl;
+  ll n, a, m, v3 = 1, v4 = 0;
+  vector<ll> v, v2;
   cin >> n;
+  v.push_back(0);
   f0(n) {
-    ll a;
     cin >> a;
-    boy.push_back(a);
+    v.push_back(a + v[i]);
   }
-  sort(boy.begin(), boy.end());
   cin >> m;
   f0(m) {
-    ll a;
     cin >> a;
-    girl.push_back(a);
+    v2.push_back(a);
   }
-  sort(girl.begin(), girl.end());
-  int b = 0, g = 0;
-  int count = 0;
-  while (b < n && g < m) {
-    if (abs(boy[b] - girl[g]) <= 1) {
-      b++;
-      g++;
-      count++;
-    } else {
-      if (boy[b] > girl[g])
-        g++;
-      else
-        b++;
-    }
-  }
-  cout << count << endl;
+  //   while (v3 < n && v4 < m) {
+  //     if (v2[v4] <= v[v3] && v2[v4] > v[v3 - 1]) {
+  //       umap[v2[v4]] = v3;
+  //       v3++;
+  //       v4++;
+  //     } else {
+  //       v3++;
+  //     }
+  //   }
+  f0(m) { a = v2[i]; }
 }
 
 int32_t main() {
